@@ -47,6 +47,7 @@
 		65A884622C7F984800B70D52 /* pix-flixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pix-flixUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A884662C7F984800B70D52 /* pix_flixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pix_flixUITests.swift; sourceTree = "<group>"; };
 		65A884682C7F984800B70D52 /* pix_flixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pix_flixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		65A884752C7F99AF00B70D52 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		65A8843C2C7F984600B70D52 = {
 			isa = PBXGroup;
 			children = (
+				65A884752C7F99AF00B70D52 /* README.md */,
 				65A884472C7F984600B70D52 /* pix-flix */,
 				65A8845B2C7F984800B70D52 /* pix-flixTests */,
 				65A884652C7F984800B70D52 /* pix-flixUITests */,
