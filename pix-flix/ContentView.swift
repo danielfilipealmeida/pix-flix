@@ -10,25 +10,25 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var projects: [Project]
 
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(projects) { project in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text(project.title)
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(project.title)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteProjects)
             }
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
             .toolbar {
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addProject) {
+                        Label("Add Project", systemImage: "plus")
                     }
                 }
             }
@@ -37,17 +37,17 @@ struct ContentView: View {
         }
     }
 
-    private func addItem() {
+    private func addProject() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            let newProject = Project(title: "No Name", duration: 60, width: 320, height: 200)
+            modelContext.insert(newProject)
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteProjects(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(projects[index])
             }
         }
     }
@@ -55,5 +55,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Project.self, inMemory: true)
 }
