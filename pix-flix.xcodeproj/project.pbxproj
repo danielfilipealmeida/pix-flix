@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		65A884492C7F984600B70D52 /* pix_flixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A884482C7F984600B70D52 /* pix_flixApp.swift */; };
 		65A8844B2C7F984600B70D52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8844A2C7F984600B70D52 /* ContentView.swift */; };
-		65A8844D2C7F984600B70D52 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8844C2C7F984600B70D52 /* Item.swift */; };
+		65A8844D2C7F984600B70D52 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8844C2C7F984600B70D52 /* Project.swift */; };
 		65A8844F2C7F984800B70D52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A8844E2C7F984800B70D52 /* Assets.xcassets */; };
 		65A884522C7F984800B70D52 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65A884512C7F984800B70D52 /* Preview Assets.xcassets */; };
 		65A8845D2C7F984800B70D52 /* pix_flixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8845C2C7F984800B70D52 /* pix_flixTests.swift */; };
@@ -38,7 +38,7 @@
 		65A884452C7F984600B70D52 /* pix-flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pix-flix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A884482C7F984600B70D52 /* pix_flixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pix_flixApp.swift; sourceTree = "<group>"; };
 		65A8844A2C7F984600B70D52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		65A8844C2C7F984600B70D52 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		65A8844C2C7F984600B70D52 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		65A8844E2C7F984800B70D52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65A884512C7F984800B70D52 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		65A884532C7F984800B70D52 /* pix_flix.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pix_flix.entitlements; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			children = (
 				65A884482C7F984600B70D52 /* pix_flixApp.swift */,
 				65A8844A2C7F984600B70D52 /* ContentView.swift */,
-				65A8844C2C7F984600B70D52 /* Item.swift */,
+				65A8844C2C7F984600B70D52 /* Project.swift */,
 				65A8844E2C7F984800B70D52 /* Assets.xcassets */,
 				65A884532C7F984800B70D52 /* pix_flix.entitlements */,
 				65A884502C7F984800B70D52 /* Preview Content */,
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65A8844B2C7F984600B70D52 /* ContentView.swift in Sources */,
-				65A8844D2C7F984600B70D52 /* Item.swift in Sources */,
+				65A8844D2C7F984600B70D52 /* Project.swift in Sources */,
 				65A884492C7F984600B70D52 /* pix_flixApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
