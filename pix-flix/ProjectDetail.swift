@@ -15,11 +15,11 @@ struct ProjectDetail: View {
     
     init(for project: Project) {
         self.project = project
+        self.currentImageUrl = nil
     }
     
+    
     var body: some View {
-        
-           
         HStack {
             if currentImageUrl != nil {
                 AsyncImage(url: currentImageUrl) { image in
@@ -28,7 +28,7 @@ struct ProjectDetail: View {
                         .scaledToFill()
                 } placeholder: {
                     ProgressView()
-                } .frame(minWidth: 400)
+                }.frame(minWidth: 400)
             } else {
                 Text("Select an url from the list to view it.")
                     .frame(minWidth: 400)
@@ -52,8 +52,6 @@ struct ProjectDetail: View {
 
                 return true
             }
-        
-                
         }
     }
 }
