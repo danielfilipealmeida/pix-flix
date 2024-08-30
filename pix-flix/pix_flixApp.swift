@@ -5,8 +5,10 @@
 //  Created by Daniel Almeida on 28/08/2024.
 //
 
+import Foundation
 import SwiftUI
 import SwiftData
+
 
 @main
 struct pix_flixApp: App {
@@ -22,11 +24,14 @@ struct pix_flixApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+    
+  
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        .windowStyle(.hiddenTitleBar)
     }
+    
 }

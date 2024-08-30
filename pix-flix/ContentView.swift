@@ -16,11 +16,7 @@ struct ContentView: View {
         NavigationSplitView {
             List {
                 ForEach(projects) { project in
-                    NavigationLink {
-                        Text(project.title)
-                    } label: {
-                        Text(project.title)
-                    }
+                    NavigationLink(project.title, destination: ProjectDetail(for: project))
                 }
                 .onDelete(perform: deleteProjects)
             }
@@ -33,7 +29,7 @@ struct ContentView: View {
                 }
             }
         } detail: {
-            Text("Select an item")
+            Text("Select one project.")
         }
     }
 
