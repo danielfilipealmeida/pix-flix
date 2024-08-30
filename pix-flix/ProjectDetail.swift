@@ -33,8 +33,11 @@ struct ProjectDetail: View {
                 Text("Select an url from the list to view it.")
                     .frame(minWidth: 400)
             }
-            List(project.urls, id:\.self, selection: self.$currentImageUrl) {
-                Text($0.lastPathComponent)
+            List(selection: self.$currentImageUrl) {
+                ForEach(project.urls, id:\.self) { url in
+                    Text(url.lastPathComponent)
+                }
+                .onMove(perform: move)
             }
             .frame(minWidth: 400)
             .dropDestination(for: URL.self) { items, location in
@@ -53,5 +56,9 @@ struct ProjectDetail: View {
                 return true
             }
         }
+    }
+    
+    func move(from source:IndexSet, to destination:Int) {
+        project.urls.move(fromOffsets: source, toOffset: destination)
     }
 }
