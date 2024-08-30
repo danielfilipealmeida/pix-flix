@@ -11,10 +11,11 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var projects: [Project]
-
+    
+    
     var body: some View {
         NavigationSplitView {
-            List {
+            List{
                 ForEach(projects) { project in
                     NavigationLink(project.title, destination: ProjectDetail(for: project))
                 }

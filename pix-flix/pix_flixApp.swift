@@ -25,6 +25,8 @@ struct pix_flixApp: App {
         }
     }()
     
+    @State var currentProject: Project?
+    
   
     var body: some Scene {
         WindowGroup {
@@ -32,6 +34,9 @@ struct pix_flixApp: App {
         }
         .modelContainer(sharedModelContainer)
         .windowStyle(.hiddenTitleBar)
+        Settings {
+            SettingsView()
+        }
     }
     
 }
