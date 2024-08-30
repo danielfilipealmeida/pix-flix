@@ -12,6 +12,9 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var projects: [Project]
     
+    @State var newProjectName: String = "No Name"
+    @State var isCreatingNewProject: Bool = false
+    
     
     var body: some View {
         NavigationSplitView {
@@ -24,9 +27,17 @@ struct ContentView: View {
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
             .toolbar {
                 ToolbarItem {
-                    Button(action: addProject) {
-                        Label("Add Project", systemImage: "plus")
-                    }
+                    Button("New Project", systemImage: "plus") {
+                        isCreatingNewProject.toggle()
+                    }.alert("Create new Project", isPresented: $isCreatingNewProject) {
+                        TextField("New name", text: $newProjectName)
+                        Button("Cancel") {
+                            isCreatingNewProject.toggle()
+                        }
+                        Button(action: addProject) {
+                                Text("Create new Project")
+                        }
+                    }.frame(maxWidth: 300)
                 }
             }
         } detail: {
@@ -36,7 +47,18 @@ struct ContentView: View {
 
     private func addProject() {
         withAnimation {
-            let newProject = Project(title: "No Name", duration: 60, width: 320, height: 200)
+            // Note, this code is just here for learning purposes.
+            // when encoding the video, the duration and dimensions will be ignored
+            // and the preferences will be used instead
+            let duration:Double = Configuration.duration.wrappedValue
+            let resolution:String = Configuration.resolution.wrappedValue
+            let resolutionArray = resolution.components(separatedBy: "x")
+            let newProject = Project(
+                title: newProjectName,
+                duration: duration,
+                width: Int(resolutionArray[0])!,
+                height: Int(resolutionArray[1])!
+            )
             modelContext.insert(newProject)
         }
     }
