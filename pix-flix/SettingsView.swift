@@ -48,9 +48,18 @@ struct SettingsView: View {
             }
             
             
+            /*
              Form {
                  TextField("Duration", value: duration.projectedValue, format:.number)
              }
+             */
+            HStack {
+                Text("Duration")
+                TextField("Duration", value: duration.projectedValue, format:.number).frame(width: 60)
+                Stepper("Value", value: duration.projectedValue, in: 0...360, step: 5).labelsHidden()
+                Text("in seconds")
+                Spacer()
+            }
         }.padding(20)
             .frame(minWidth: 350, minHeight: 600)
     }

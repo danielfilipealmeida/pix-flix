@@ -37,6 +37,10 @@ struct pix_flixApp: App {
         Settings {
             SettingsView()
         }
+        
+        Window("Preferences", id:"preferences") {
+            SettingsView()
+        }
     }
     
 }

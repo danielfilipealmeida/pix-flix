@@ -11,6 +11,7 @@ struct ProjectDetail: View {
     var project: Project
     @State private var currentImageUrl: URL? = nil
     let allowedExtensions: [String] = ["jpeg", "jpg", "gif", "png"]
+    @Environment(\.openWindow) private var openWindow
     
     
     init(for project: Project) {
@@ -83,6 +84,6 @@ struct ProjectDetail: View {
     }
     
     func setProjectConfiguration() {
-        
+        openWindow(id: "preferences")
     }
 }
