@@ -10,6 +10,7 @@
 		650571F42C8084B200D41E60 /* ProjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650571F32C8084B200D41E60 /* ProjectDetail.swift */; };
 		650571F82C82167D00D41E60 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650571F72C82167D00D41E60 /* SettingsView.swift */; };
 		650571FA2C82A00D00D41E60 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650571F92C82A00D00D41E60 /* MenuBarView.swift */; };
+		650571FC2C83728200D41E60 /* VideoCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650571FB2C83728200D41E60 /* VideoCreator.swift */; };
 		65A884492C7F984600B70D52 /* pix_flixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A884482C7F984600B70D52 /* pix_flixApp.swift */; };
 		65A8844B2C7F984600B70D52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8844A2C7F984600B70D52 /* ContentView.swift */; };
 		65A8844D2C7F984600B70D52 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8844C2C7F984600B70D52 /* Project.swift */; };
@@ -41,6 +42,7 @@
 		650571F32C8084B200D41E60 /* ProjectDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetail.swift; sourceTree = "<group>"; };
 		650571F72C82167D00D41E60 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		650571F92C82A00D00D41E60 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		650571FB2C83728200D41E60 /* VideoCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCreator.swift; sourceTree = "<group>"; };
 		65A884452C7F984600B70D52 /* pix-flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pix-flix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A884482C7F984600B70D52 /* pix_flixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pix_flixApp.swift; sourceTree = "<group>"; };
 		65A8844A2C7F984600B70D52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				650571F32C8084B200D41E60 /* ProjectDetail.swift */,
 				650571F72C82167D00D41E60 /* SettingsView.swift */,
 				650571F92C82A00D00D41E60 /* MenuBarView.swift */,
+				650571FB2C83728200D41E60 /* VideoCreator.swift */,
 			);
 			path = "pix-flix";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				650571F42C8084B200D41E60 /* ProjectDetail.swift in Sources */,
 				65A8844B2C7F984600B70D52 /* ContentView.swift in Sources */,
 				650571FA2C82A00D00D41E60 /* MenuBarView.swift in Sources */,
+				650571FC2C83728200D41E60 /* VideoCreator.swift in Sources */,
 				65A8844D2C7F984600B70D52 /* Project.swift in Sources */,
 				65A884492C7F984600B70D52 /* pix_flixApp.swift in Sources */,
 			);
