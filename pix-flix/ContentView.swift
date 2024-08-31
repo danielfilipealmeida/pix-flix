@@ -12,17 +12,23 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var projects: [Project]
     
-    @State var newProjectName: String = "No Name"
+    @State var newProjectName: String = ""
+    @State var renameProjectName: String = ""
     @State var isCreatingNewProject: Bool = false
+    @State var isEditingProjectName: Bool = false
     
+    @State private var currentSelectedProject: Project?
     
     var body: some View {
         NavigationSplitView {
-            List{
-                ForEach(projects) { project in
-                    NavigationLink(project.title, destination: ProjectDetail(for: project))
+            List(selection: $currentSelectedProject){
+                ForEach(projects, id:\.self) { project in
+                    NavigationLink(project.title, value: project)
                 }
                 .onDelete(perform: deleteProjects)
+            }
+            .onChange(of: currentSelectedProject) {
+                renameProjectName = currentSelectedProject!.title
             }
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
             .toolbar {
@@ -35,13 +41,35 @@ struct ContentView: View {
                             isCreatingNewProject.toggle()
                         }
                         Button(action: addProject) {
-                                Text("Create new Project")
+                            Text("Create new Project")
+                        }
+                    }.frame(maxWidth: 300)
+                }
+                ToolbarItem {
+                    Button("Rename", systemImage: "pencil") {
+                        if currentSelectedProject == nil {
+                            return
+                        }
+                        isEditingProjectName.toggle()
+                    }.alert("Edit Project name", isPresented: $isEditingProjectName) {
+                        TextField("New name", text: $renameProjectName)
+                        Button("Cancel") {
+                            isEditingProjectName.toggle()
+                        }
+                        Button(action: changeProjectName) {
+                            Text("Change Project name")
                         }
                     }.frame(maxWidth: 300)
                 }
             }
         } detail: {
-            Text("Select one project.")
+            if let project = currentSelectedProject  {
+                ProjectDetail(for: project)
+            }
+            else {
+                Text("Select one project.")
+            }
+           
         }
     }
 
@@ -68,6 +96,15 @@ struct ContentView: View {
             for index in offsets {
                 modelContext.delete(projects[index])
             }
+        }
+    }
+    
+    private func changeProjectName() {
+        if currentSelectedProject == nil {
+            return
+        }
+        withAnimation {
+            currentSelectedProject!.title = renameProjectName
         }
     }
 }
