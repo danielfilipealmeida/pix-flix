@@ -30,10 +30,7 @@ struct pix_flixApp: App {
   
     var body: some Scene {
         WindowGroup {
-            VStack{
-                ContentView().navigationTitle("Pix Flix")
-                MenuBarView()
-            }
+            ContentView().navigationTitle("Pix Flix")
         }
         .modelContainer(sharedModelContainer)
         Settings {
