@@ -29,7 +29,6 @@ struct MenuBarView: View {
     @Environment(\.openWindow) private var openWindow
     @Binding var currentSelectedProject: Project?
     
-    
     var body: some View {
         HStack(spacing: 20) {
             Spacer()
@@ -81,8 +80,12 @@ struct MenuBarView: View {
     }
 }
 
-/*
- #Preview {
- MenuBarView()
- }
- */
+#Preview {
+    ZStack {
+        let project:Project = .init(title: "Test Project", duration: 60, width: 1024, height: 720)
+        @State var projectBinding: Project? = project
+        
+        MenuBarView(currentSelectedProject: $projectBinding)
+    }
+}
+
