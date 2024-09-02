@@ -12,7 +12,7 @@ struct ProjectDetail: View {
     @State private var currentImageUrl: URL? = nil
     let allowedExtensions: [String] = ["jpeg", "jpg", "gif", "png"]
     
-    
+
     init(for project: Project) {
         self.project = project
         self.currentImageUrl = nil

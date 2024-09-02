@@ -12,6 +12,8 @@ import SwiftData
 
 @main
 struct pix_flixApp: App {
+    @Environment(\.dismissWindow) private var dismissWindow
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Project.self,

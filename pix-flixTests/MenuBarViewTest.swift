@@ -7,6 +7,7 @@
 
 import XCTest
 
+
 final class MenuBarViewTest: XCTestCase {
 
     override func setUpWithError() throws {
@@ -18,19 +19,15 @@ final class MenuBarViewTest: XCTestCase {
     }
 
     func test_getNSImageArrayFromURLArray() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-        
+        let bundle = Bundle(for: type(of: self))
+         
         let urls = [
-            URL(fileURLWithPath: "/file1"),
-            URL(fileURLWithPath: "/file2"),
+            URL(fileURLWithPath: bundle.path(forResource: "testimage1", ofType: "png")!),
+            URL(fileURLWithPath: bundle.path(forResource: "testimage2", ofType: "png")!)
         ]
         let result = getNSImageArrayFromURLArray(urls)
         
-        //XCTAssert(1 == 2)
+        XCTAssert(result.count == 2)
     }
 
     func testPerformanceExample() throws {

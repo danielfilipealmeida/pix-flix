@@ -19,6 +19,8 @@
 		650572052C84C64600D41E60 /* ProjectDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650571F32C8084B200D41E60 /* ProjectDetail.swift */; };
 		650572062C84C68700D41E60 /* pix_flixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A884482C7F984600B70D52 /* pix_flixApp.swift */; };
 		650572072C84C69500D41E60 /* VideoCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650571FB2C83728200D41E60 /* VideoCreator.swift */; };
+		6505720C2C84D2C300D41E60 /* testimage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6505720A2C84D2C300D41E60 /* testimage1.png */; };
+		6505720D2C84D2C300D41E60 /* testimage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6505720B2C84D2C300D41E60 /* testimage2.png */; };
 		65A884492C7F984600B70D52 /* pix_flixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A884482C7F984600B70D52 /* pix_flixApp.swift */; };
 		65A8844B2C7F984600B70D52 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8844A2C7F984600B70D52 /* ContentView.swift */; };
 		65A8844D2C7F984600B70D52 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8844C2C7F984600B70D52 /* Project.swift */; };
@@ -52,6 +54,8 @@
 		650571F92C82A00D00D41E60 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		650571FB2C83728200D41E60 /* VideoCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCreator.swift; sourceTree = "<group>"; };
 		650571FD2C83E6C700D41E60 /* MenuBarViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewTest.swift; sourceTree = "<group>"; };
+		6505720A2C84D2C300D41E60 /* testimage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testimage1.png; sourceTree = "<group>"; };
+		6505720B2C84D2C300D41E60 /* testimage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testimage2.png; sourceTree = "<group>"; };
 		65A884452C7F984600B70D52 /* pix-flix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pix-flix.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A884482C7F984600B70D52 /* pix_flixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pix_flixApp.swift; sourceTree = "<group>"; };
 		65A8844A2C7F984600B70D52 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +96,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650572082C84CB3900D41E60 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				650572092C84CB4000D41E60 /* images */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
+		650572092C84CB4000D41E60 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6505720A2C84D2C300D41E60 /* testimage1.png */,
+				6505720B2C84D2C300D41E60 /* testimage2.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		65A8843C2C7F984600B70D52 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +162,7 @@
 		65A8845B2C7F984800B70D52 /* pix-flixTests */ = {
 			isa = PBXGroup;
 			children = (
+				650572082C84CB3900D41E60 /* files */,
 				65A8845C2C7F984800B70D52 /* pix_flixTests.swift */,
 				650571FD2C83E6C700D41E60 /* MenuBarViewTest.swift */,
 			);
@@ -269,6 +291,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6505720D2C84D2C300D41E60 /* testimage2.png in Resources */,
+				6505720C2C84D2C300D41E60 /* testimage1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
