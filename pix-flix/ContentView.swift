@@ -15,11 +15,14 @@ import SwiftData
 /// - Returns: parsed size
 func getSizeFromResolutionString(_ resolution: String) -> CGSize {
     let resolutionArray: [String] = resolution.components(separatedBy: "x")
-    if resolution.count < 2 {
+    if resolutionArray.count < 2 {
         return CGSize(width: 0.0, height: 0.0)
     }
     
-    return CGSize(width: Double(resolutionArray[0])!, height: Double(resolutionArray[1])!)
+    return CGSize(
+        width: (!resolutionArray[0].isEmpty ? Double(resolutionArray[0]) : 0.0)!,
+        height: (!resolutionArray[1].isEmpty ? Double(resolutionArray[1]) : 0.0)!
+    )
 }
 
 
@@ -45,6 +48,9 @@ struct ContentView: View {
                     .onDelete(perform: deleteProjects)
                 }
                 .onChange(of: currentSelectedProject) {
+                    if currentSelectedProject == nil {
+                        return
+                    }
                     renameProjectName = currentSelectedProject!.title
                 }
                 .navigationSplitViewColumnWidth(min: 180, ideal: 200)
