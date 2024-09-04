@@ -12,11 +12,21 @@ import SwiftData
 
 @main
 struct pix_flixApp: App {
+    @Environment(\.dismissWindow) private var dismissWindow
+    
     var sharedModelContainer: ModelContainer = {
+        var inMemory = false
+
+        #if DEBUG
+        if CommandLine.arguments.contains("enable-testing") {
+            inMemory = true
+        }
+        #endif
+        
         let schema = Schema([
             Project.self,
         ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
 
         do {
             return try ModelContainer(for: schema, configurations: [modelConfiguration])

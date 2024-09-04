@@ -29,7 +29,6 @@ struct MenuBarView: View {
     @Environment(\.openWindow) private var openWindow
     @Binding var currentSelectedProject: Project?
     
-    
     var body: some View {
         HStack(spacing: 20) {
             Spacer()
@@ -40,6 +39,10 @@ struct MenuBarView: View {
         .frame(height: 50)
     }
     
+    
+    /// Does the needed interface to get the outpuf file and runs the encoding.
+    /// Will request the output file, run conversion and present an alert with the output of the action
+    /// won't run if there isn't a project set
     func encode() {
         if currentSelectedProject == nil {
             return
@@ -61,15 +64,15 @@ struct MenuBarView: View {
         let outputURL: URL = panel.url!
         let videoCreator: VideoCreator = .init(images: images, outputURL: outputURL, videoSize: resolution, duration: duration)
         videoCreator.run { success in
-            if success {
-                print("Video created successfully at \(outputURL)")
-                exit(0)
-              } else {
-                print("Failed creating video")
-                  exit(-1)
+            DispatchQueue.main.async {
+                let alert: NSAlert = .init()
+                alert.messageText = success ? "Video encoded" : "Error"
+                alert.informativeText = success ? "Video created successfully at \(outputURL.path())" : "Failed creating video"
+                alert.alertStyle = success ? .informational : .warning
+                alert.addButton(withTitle: "OK")
+                _ = alert.runModal()
             }
         }
-         
     }
     
     func setProjectConfiguration() {
@@ -77,8 +80,12 @@ struct MenuBarView: View {
     }
 }
 
-/*
- #Preview {
- MenuBarView()
- }
- */
+#Preview {
+    ZStack {
+        let project:Project = .init(title: "Test Project", duration: 60, width: 1024, height: 720)
+        @State var projectBinding: Project? = project
+        
+        MenuBarView(currentSelectedProject: $projectBinding)
+    }
+}
+
